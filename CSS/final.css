@@ -24,12 +24,16 @@ h1 {
     display: grid;
     height: 90vh;
     grid-template-rows: auto 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr 2fr;
+    row-gap: 24px;
     grid-area: 40px;
     grid-template-areas: "header header" "data pic";
+    column-gap: 50px;
 }
 
 .header {
+    margin: 0;
+    padding: 0;
     grid-area: header;
     background-color: rgb(56, 121, 101);
     color: aliceblue;
@@ -41,6 +45,7 @@ h1 {
     font-family: 'Tangerine', serif;
     border-bottom: 2px solid rgb(152, 198, 187);
     /* position: fixed; */
+    /* overflow: hidden; */
 
 }
 ul a {
@@ -59,7 +64,7 @@ ul a:hover {
     padding: 10px;
     height: 500px;
     justify-items: center;
-    margin-left: 30px;
+    margin-left: 60px;
     width: 500px;
     border: 2px solid rgb(152, 198, 187);
     border-radius: 20px;
@@ -109,7 +114,7 @@ ul {
     list-style-type: none;
 }
 footer {
-    position: fixed;
+    /* position: fixed; */
     width: 100vw;
     height: 40px;
     background-color: black;
@@ -121,46 +126,105 @@ footer img {
     max-height: 30px;
 }
 section {
-    margin: 20px auto;
+    position: relative;
+    margin: 0 auto;
 }
 .indi-flora {
     display: grid;
-    height: 100vh;
-    grid-template-columns: repeat(3, 1fr);
+    /* height: 100vh; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(autofit,minmax(200px, 1fr));
     column-gap: 20px;
-    row-gap: 30px;
+    row-gap: 100px;
     width: 90vw;
     margin: 20px auto;
+    grid-auto-rows: minmax(350px, auto);
+    /* grid-template-columns: repeat(autofill, minmax(350px, 1fr)); */
 }
 
 .item {
-    border: 2px solid black;
     background-color: rgb(193, 235, 222);
     width: 100%;
     max-width: 350px;
+    border: 2px solid black;
 }
-.item>img {
+.item>a {
+    text-decoration: none;
+    color: black;
+}
+.item>a>img {
     /* width: 100%;
     height: 100%;
     max-width: 350px;
     height: 300px; */
     width: 350px;
     height: 300px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     object-fit: cover;
     margin: 0;
     border: none;
 }
-.item>h2 {
+.item>a>h2 {
     padding: 10px auto;
     text-align: center;
 }
-.item>article {
+.item>a>article {
     padding: 5px 0 10px 10px;
 }
 span {
     font-weight: bold;
 }
+.flora-info {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    background-color: rgb(52, 224, 170);
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.flora-info>h2 {
+    font-family: 'Tangerine', serif;
+    text-align: center;
+    text-shadow: 4px 4px 4px #aaa;
+    padding-bottom: 20px;
+    font-size: 2rem;
+    font-style: italic;
+}
+/* @media(min-width: 720px) {
+    .indi-flora {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .item {
+        grid-column: 1/ span 6;
+    }
+    .item>img {
+        width: 100%;
+        height: auto;
+        min-height: 70%;
+    }
+} 
+@media(max-width: 720px) {
+    .indi-flora {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .item {
+        grid-column: 1 / span 12;
+    }
+    .item>img {
+        width: 100%;
+        height: auto;
+        min-height: 70%;
+    }
+    .item>article {
+        overflow-wrap: normal;
+        height: auto;
+    }
+} */
+/* span {
+    margin-top: 20px;
+} */
 /* article {
     word-wrap: break-word;
 } */

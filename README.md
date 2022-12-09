@@ -6,4 +6,6 @@
 
 🌿 This website provides information about Flora in India and a few good to keep Indoor Plants covering basic good first information.
 
+:woman_technologist: Website [link](https://vedamruta.github.io/Floral-Fairy/)
+
 🌻 Hope you enjoy visiting this :)
